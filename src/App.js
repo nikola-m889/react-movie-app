@@ -71,9 +71,9 @@ const App = () => {
         deleteFavorites,
       }}
     >
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Switch>
-          <Route path={process.env.PUBLIC_URL + "/"} component={Home} />
+          <Route path="/" component={Home} />
           <Route path="/favorites" component={Favorites} />
         </Switch>
       </Router>
