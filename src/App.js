@@ -10,6 +10,8 @@ const App = () => {
   const [favorites, addFavorites] = useState([]);
   const [searchMovie, setSearchMovie] = useState("");
 
+  const PUBLIC_URL = "https://nikola-m889.github.io/react-movie-app";
+
   const findMovie = async (searchMovie) => {
     const url = `https://api.themoviedb.org/3/search/movie?api_key=731f3d186278f13415d6f4a26e0ff069&query=${searchMovie}`;
     fetch(url)
@@ -71,7 +73,7 @@ const App = () => {
     >
       <Router>
         <Switch>
-          <Route path="/" component={Home} />
+          <Route path={process.env.PUBLIC_URL + "/"} component={Home} />
           <Route path="/favorites" component={Favorites} />
         </Switch>
       </Router>
