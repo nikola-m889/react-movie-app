@@ -71,7 +71,7 @@ const App = () => {
     >
       <Router>
         <Switch>
-          <Route path="/" component={Home} />
+          <Route path="/react-movie-app" component={Home} />
           <Route path="/favorites" component={Favorites} />
         </Switch>
       </Router>
