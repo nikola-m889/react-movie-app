@@ -1,38 +1,135 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: rgb(14, 13, 13);
+  font-family: "Roboto", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+a {
   color: white;
+  text-decoration: none;
 }
 
-.App-link {
-  color: #61dafb;
+h3 {
+  color: white;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 0;
+  margin-bottom: -20px;
+  font-size: 22px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+h4 {
+  color: rgb(251, 84, 23);
+}
+
+.header {
+  background: rgb(10, 10, 10);
+  min-height: 40px;
+  width: 100%;
+  top: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: orangered 3px solid;
+  position: absolute;
+}
+
+.search-nav {
+  width: 10px;
+  margin-left: 50px;
+  padding: 10px 10px;
+  float: left;
+  display: inline;
+  background: rgb(7, 6, 6);
+}
+
+.search-nav input {
+  padding: 10px 0;
+  width: 300px;
+  background-color: rgb(36, 36, 36);
+  border: 3px solid orangered;
+  border-radius: 19px;
+  color: white;
+  margin: auto;
+  font-size: 22px;
+}
+
+.search-nav input:focus {
+  outline: none;
+}
+
+.search-nav input::placeholder {
+  color: rgb(155, 155, 155);
+}
+
+.nav-list {
+  float: right;
+  display: inline;
+  margin-top: 22px;
+  margin-right: 70px;
+  font-size: 25px;
+  background: rgb(10, 10, 10);
+}
+
+.nav {
+  display: inline;
+  margin-left: 30px;
+  background: rgb(10, 10, 10);
+}
+
+.display {
+  padding-top: 100px;
+  background-color: rgb(14, 14, 14);
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+}
+
+.result {
+  padding: 20px 0;
+  margin: 0 5px;
+}
+
+.list-container {
+  cursor: pointer;
+}
+
+.list-container:hover .fav-option {
+  opacity: 1;
+}
+
+.fav-option {
+  opacity: 0;
+  background: rgb(10, 10, 10);
+  color: white;
+  transition: 0.5s ease;
+  /*margin-top: -80px;*/
+}
+
+.result img {
+  max-width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .result img {
+    max-width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+  h3 {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 700px) {
+  .display {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+  }
+  h3 {
+    font-size: 16px;
   }
 }
