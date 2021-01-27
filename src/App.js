@@ -9,8 +9,7 @@ const App = () => {
   const [movies, addMovies] = useState([]);
   const [favorites, addFavorites] = useState([]);
   const [searchMovie, setSearchMovie] = useState("");
-
-  const PUBLIC_URL = "https://nikola-m889.github.io/react-movie-app";
+  const [activated, setActivated] = useState(false);
 
   const findMovie = async (searchMovie) => {
     const url = `https://api.themoviedb.org/3/search/movie?api_key=731f3d186278f13415d6f4a26e0ff069&query=${searchMovie}`;
@@ -69,12 +68,14 @@ const App = () => {
         addFavorites,
         addingFavorites,
         deleteFavorites,
+        activated,
+        setActivated,
       }}
     >
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router>
         <Switch>
-          <Route path="/" component={Home} />
-          <Route path="/favorites" component={Favorites} />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/favorites" component={Favorites} />
         </Switch>
       </Router>
     </GlobalState.Provider>
