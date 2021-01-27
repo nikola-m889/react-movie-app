@@ -4,13 +4,14 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  background-color: rgb(14, 13, 13);
+  background-color: rgb(10, 10, 10);
   font-family: "Roboto", sans-serif;
 }
 
 a {
   color: white;
   text-decoration: none;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 h3 {
@@ -33,7 +34,7 @@ h4 {
   top: 0;
   padding-top: 10px;
   padding-bottom: 10px;
-  border-bottom: orangered 3px solid;
+  border-bottom: rgb(231, 62, 0) 3px solid;
   position: absolute;
 }
 
@@ -50,7 +51,7 @@ h4 {
   padding: 10px 0;
   width: 300px;
   background-color: rgb(36, 36, 36);
-  border: 3px solid orangered;
+  border: 3px solid rgb(230, 64, 4);
   border-radius: 19px;
   color: white;
   margin: auto;
@@ -67,17 +68,39 @@ h4 {
 
 .nav-list {
   float: right;
-  display: inline;
-  margin-top: 22px;
-  margin-right: 70px;
+  display: flex;
+  flex-flow: nowrap;
+  margin-top: 0;
+  padding-right: 70px;
+  list-style: none;
   font-size: 25px;
-  background: rgb(10, 10, 10);
+  background: rgba(10, 10, 10, 0);
 }
 
 .nav {
-  display: inline;
+  white-space: nowrap;
   margin-left: 30px;
-  background: rgb(10, 10, 10);
+  margin-right: 0px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.burger-menu {
+  display: none;
+  width: 0px;
+  height: 38px;
+  top: 20px;
+  margin-top: 20px !important;
+  margin-left: 47% !important;
+  display: flex;
+  background: transparent;
+}
+
+.div1 {
+  visibility: hidden;
+  width: 40px;
+  height: 6px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
 }
 
 .display {
@@ -114,6 +137,14 @@ h4 {
   max-width: 100%;
 }
 
+@media (max-width: 1600px) {
+  .burger-menu {
+    width: 100px;
+    margin-top: 20px !important;
+    margin-left: 35% !important;
+  }
+}
+
 @media (max-width: 1200px) {
   .result img {
     max-width: 100%;
@@ -121,15 +152,82 @@ h4 {
   h3 {
     font-size: 19px;
   }
+
+  .burger-menu {
+    width: 100px;
+    margin-top: 20px !important;
+    margin-left: 13% !important;
+  }
+
+  .div1 {
+    visibility: hidden;
+  }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 760px) {
+  h3 {
+    font-size: 16px;
+  }
+
   .display {
+    padding-top: 100px;
+    background-color: rgb(14, 14, 14);
+    height: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 2rem;
   }
-  h3 {
-    font-size: 16px;
+
+  .search-nav {
+    width: 10px;
+    margin-left: 20px;
+    padding: 10px 10px;
+    float: left;
+    display: inline;
+    background: rgb(7, 6, 6);
+  }
+
+  .search-nav input {
+    width: 240px;
+  }
+
+  .nav-list {
+    flex-flow: column nowrap;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100vh;
+    list-style: none;
+    margin-right: 0px;
+    padding-top: 90px;
+    background-color: rgba(0, 0, 0, 0.603);
+    transition: 0.3s ease-in-out;
+  }
+  li {
+    font-size: 27px;
+    margin-right: 10px;
+    padding-bottom: 20px;
+  }
+
+  .burger-menu {
+    width: 40px;
+    height: 38px;
+    position: fixed;
+    top: 9px;
+    right: 50px;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: column nowrap;
+  }
+
+  .div1 {
+    visibility: visible;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-list {
+    width: 200px;
   }
 }
